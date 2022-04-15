@@ -12,3 +12,11 @@ I need this code, but don't know where, perhaps should make some middleware, don
 
 Pull your server into this file and start it!
 */
+
+const server = require('./api/server')
+require('dotenv').config();
+
+const actionDB = require('./api/actions/actions-model')
+server.listen(process.env.PORT || 9000,()=>{
+    console.log('\x1b[33m',`Starting server on port: ${process.env.PORT || 9000}`,'\x1b[0m')
+})
